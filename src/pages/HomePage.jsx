@@ -39,7 +39,7 @@ useEffect(() => {
 
   return (
     <div className="home_container">
-       <button className='home_btn_dark' onClick={handledark} >dark y light mode</button>
+       <button className='home_btn_dark' onClick={handledark} >dark-light mode</button>
     <div className="home">
       <img className="home_img" src="/pokedex1.png" alt="/pokedex1.png" />
       <p className="home_p"><span className="home_greeting">¡Hi Trainer!</span><br /> if you want to find you favorite pokemon,

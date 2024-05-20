@@ -29,7 +29,7 @@ const HeaderPages = () => {
     <header className="header">
           <div className="header_home_red">
             <button className='header_btn' onClick={handleClick}>Home</button>
-            <button className='header_btn' onClick={handledark} >dark y light mode</button>
+            <button className='header_btn' onClick={handledark} >dark-light mode</button>
             </div>
           <div className="header_home_black"></div>
           <img className="header_img" src="/pokedex1.png" alt="/pokedex1.png" />
