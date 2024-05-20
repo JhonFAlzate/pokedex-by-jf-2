@@ -10,10 +10,10 @@ const HomePage = () => {
 
 
  const dispatch = useDispatch()
-//  const [dark, setDark] = useState(false)
+
 const dark = useSelector(states => states.dark)
 
- const navigate = useNavigate()  // useNavigate me permite navegar directamente hacia las rutas
+ const navigate = useNavigate()  
 
 const inputTrainer =  useRef()
 const handleSubmit = e => {
@@ -23,12 +23,12 @@ const handleSubmit = e => {
 }
 
 
-const trainer = useSelector(states => states.trainer) //El useSelector me permite acceder al estado e imprimirlo en consola para ver su contenido
+const trainer = useSelector(states => states.trainer)
 
 
 const handledark = () => {
   dispatch(setDarkSlice(!dark))
-  // setDark(!dark)
+ 
 }
 
 

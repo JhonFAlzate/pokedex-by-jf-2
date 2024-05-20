@@ -20,7 +20,7 @@ const HeaderPages = () => {
       
         dispatch(setDarkSlice(!dark))
     }
-    console.log(dark)
+  
     useEffect(() => {
         document.body.setAttribute('data-tema', dark)
     }, [dark])
