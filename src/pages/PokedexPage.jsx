@@ -11,10 +11,10 @@ import Pagination from "../components/Pagination"
 
 const PokedexPage = () => {
 /*--------*/
-  const [posts, setPosts] = useState([])
-  const [loading, setLoading] = useState(false)
-  const [currentPage, setCurrentPage] = useState(1)
-  const [postsPerPage, setPostsPerPage] = useState(10)
+  // const [posts, setPosts] = useState([])
+  // const [loading, setLoading] = useState(false)
+  // const [currentPage, setCurrentPage] = useState(1)
+  // const [postsPerPage, setPostsPerPage] = useState(10)
 
 
 
@@ -32,7 +32,7 @@ const [pokemons, getPokemons, getTypePokemon] = UseFetch()
 useEffect(() => {
 if(typeSelect === 'allPokemons') {
 
-    const url = 'https://pokeapi.co/api/v2/pokemon?limit=30&offset=0'
+    const url = 'https://pokeapi.co/api/v2/pokemon?limit=20&offset=0'
     getPokemons(url)
   } else {
     getTypePokemon(typeSelect)
@@ -55,10 +55,10 @@ const callbackFilter = poke => {
 }
 
 /*---------*/
-const indexOflastPost = currentPage * postsPerPage
-const indexOffirstPost = indexOflastPost-postsPerPage
-const currentPosts = posts.slice(indexOffirstPost, indexOflastPost)
-const paginate = (pagenumber) => setCurrentPage(pagenumber)
+// const indexOflastPost = currentPage * postsPerPage
+// const indexOffirstPost = indexOflastPost-postsPerPage
+// const currentPosts = posts.slice(indexOffirstPost, indexOflastPost)
+// const paginate = (pagenumber) => setCurrentPage(pagenumber)
 
 
 /*--------*/
@@ -70,7 +70,7 @@ const paginate = (pagenumber) => setCurrentPage(pagenumber)
       <HeaderPages />
         <body className="two_body">
           
-        <p className="two_welcome"><span className="two_welcom">Welcome {trainer}</span>, <span className="two_welcom_p">here you will find your favorite pokemon</span></p>
+        <p className="two_welcome"><span className="two_welcom_i">Welcome {trainer}</span>, <span className="two_welcom_p">here you will find your favorite pokemon</span></p>
         <div className="two_form_container">
               <form className="two_form" onSubmit={handleSearch} action="">
                 <input className="two_input" ref={inputName} type="text" placeholder="Look for a pokemón" />
@@ -98,7 +98,7 @@ const paginate = (pagenumber) => setCurrentPage(pagenumber)
             ) )
           }
         </div>
-          <Pagination postsPerPage= {postsPerPage} totalPosts={posts.lengh} paginate={paginate}/>
+         
       </body>
 
     </div>

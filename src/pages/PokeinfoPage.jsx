@@ -19,7 +19,7 @@ useEffect( () => {
 
 
   return (
-    <article>
+    <article className="info_article">
       <HeaderPages  />
 
       <body className="info_body">

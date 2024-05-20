@@ -1,4 +1,8 @@
 
+.info_article {
+    width: 100%;
+
+}
 .info_body {
     width: 100%;
     display: flex;

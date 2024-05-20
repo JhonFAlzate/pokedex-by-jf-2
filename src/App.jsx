@@ -13,6 +13,7 @@ function App() {
    <div className='App'>
     <Routes>
       <Route path='/' element={<HomePage/>} />
+       
       <Route element = {<ProtectedRoutes/>}>
        
          <Route path='/pokedex' element={<PokedexPage/>}/>
