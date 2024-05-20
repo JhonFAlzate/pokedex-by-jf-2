@@ -12,3 +12,4 @@ export const trainerSlice = createSlice({
 export const { setTrainer } = trainerSlice.actions;
 
 export default trainerSlice.reducer;
+ 

@@ -16,7 +16,7 @@ useEffect( () => {
   getPokemon(url)
 },[name])
 
-console.log(pokemon)
+
 
   return (
     <article>

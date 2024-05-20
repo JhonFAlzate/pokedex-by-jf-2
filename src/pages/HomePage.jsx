@@ -1,15 +1,17 @@
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef } from "react"
 import { setTrainer } from "../store/slices/trainer.slice"
 import { useDispatch, useSelector} from "react-redux"
 import { useNavigate } from "react-router-dom"
 import "../components/styles/HomePage.css"
+import { setDarkSlice } from "../store/slices/dark.slice"
 
 const HomePage = () => {
 
 
 
  const dispatch = useDispatch()
- const [dark, setDark] = useState(false)
+//  const [dark, setDark] = useState(false)
+const dark = useSelector(states => states.dark)
 
  const navigate = useNavigate()  // useNavigate me permite navegar directamente hacia las rutas
 
@@ -22,11 +24,14 @@ const handleSubmit = e => {
 
 
 const trainer = useSelector(states => states.trainer) //El useSelector me permite acceder al estado e imprimirlo en consola para ver su contenido
-console.log(trainer)
+
 
 const handledark = () => {
-  setDark(!dark)
+  dispatch(setDarkSlice(!dark))
+  // setDark(!dark)
 }
+
+
 useEffect(() => {
     document.body.setAttribute('data-tema', dark)
 }, [dark])
@@ -34,7 +39,7 @@ useEffect(() => {
 
   return (
     <div className="home_container">
-       <button className='home_btn_dark' onClick={handledark} >Mode Color</button>
+       <button className='home_btn_dark' onClick={handledark} >dark y light mode</button>
     <div className="home">
       <img className="home_img" src="/pokedex1.png" alt="/pokedex1.png" />
       <p className="home_p"><span className="home_greeting">¡Hi Trainer!</span><br /> if you want to find you favorite pokemon,

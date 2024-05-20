@@ -27,7 +27,7 @@
 }
 .header_btn {
     background-color:white;
-    width: 7em;
+    width: 10em;
     margin-bottom:  2.5em;
     border-radius: 0.5em;
     &:hover {

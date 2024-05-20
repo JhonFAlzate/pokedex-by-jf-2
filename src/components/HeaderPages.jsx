@@ -1,20 +1,26 @@
 import { useNavigate } from 'react-router-dom'
 import './styles/HeaderPages.css'
-import { useEffect, useState } from 'react'
-// import { Logo, Luna, Sol} from "./icons"
+import { useEffect} from 'react'
+import { setDarkSlice } from "../store/slices/dark.slice"
+import { useDispatch, useSelector} from "react-redux"
+
 
 const HeaderPages = () => {
-    const [dark, setDark] = useState(false)
+   
 
     const navigate = useNavigate()
+    const dispatch = useDispatch()
+    const dark = useSelector(states => states.dark)
 
     const handleClick = () => {
         navigate('/pokedex')  
     } 
 
     const handledark = () => {
-        setDark(!dark)
+      
+        dispatch(setDarkSlice(!dark))
     }
+    console.log(dark)
     useEffect(() => {
         document.body.setAttribute('data-tema', dark)
     }, [dark])
@@ -23,7 +29,7 @@ const HeaderPages = () => {
     <header className="header">
           <div className="header_home_red">
             <button className='header_btn' onClick={handleClick}>Home</button>
-            <button className='header_btn' onClick={handledark} >Mode Color</button>
+            <button className='header_btn' onClick={handledark} >dark y light mode</button>
             </div>
           <div className="header_home_black"></div>
           <img className="header_img" src="/pokedex1.png" alt="/pokedex1.png" />

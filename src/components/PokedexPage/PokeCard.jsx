@@ -15,7 +15,7 @@ const PokeCard = ({poke}) => {
 
   }, [])
 
-  console.log(pokemon)
+ 
   const navigate = useNavigate()
 
 const handleNavDetail = () => {
