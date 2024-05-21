@@ -30,7 +30,7 @@
     border-radius: 0.5em;
 }
 .header_btn {
-    background-color:white;
+    
     width: 10em;
     margin-bottom:  2.5em;
     border-radius: 0.5em;
@@ -50,7 +50,7 @@
 }
 .header_home_circle {
     position: relative;
-    top: -5.5em;
+    top: -7.5em;
     left: 15em;
     width: 4em;
     background-color: #000000;
@@ -59,13 +59,13 @@
     display: flex;
    justify-content: center;
    align-items: center;
-   &:hover {
+   /* &:hover {
     transform: translateY(-5px);
     box-shadow: 0px 8px 10px #eedf07;
     background-color: #FE1936;
     color: rgb(241, 238, 238);
     filter:brightness(1.2); 
-}
+} */
        
 }
 
@@ -115,7 +115,7 @@
     }
      .two_form_container {
         width: 100%;
-        margin-left: 2em;
+        padding-left: 2em;
         display: flex;
         justify-content: start;
         align-items: center;
@@ -124,7 +124,7 @@
     }
      .header_home_circle {
         position: relative;
-        top: -8em;
+        top: -11em;
         left: 55em;
         width: 6em;
         background-color: #000000;
@@ -135,6 +135,10 @@
        align-items: center;
            
     }
+    .home_toggle {
+        margin-bottom:  0.5em;
+        border-radius: 0.5em;
+    }
 }
 
 
@@ -144,7 +148,7 @@
     display: inline-block;
     width: 50px;
     height: 25px;
-    background-color: blueviolet;
+    background-color: rgb(22, 22, 22);
     border-radius: 25px;
     cursor: pointer;
 }

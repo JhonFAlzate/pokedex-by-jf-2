@@ -22,7 +22,7 @@ useEffect( () => {
     <article className="info_article">
       <HeaderPages  />
 
-      <body className="info_body">
+      <div className="info_body">
 
         <section className="info_card">
 
@@ -103,7 +103,7 @@ useEffect( () => {
             </ul>
 
          </div>
-        </body>
+        </div>
     </article>
 
 

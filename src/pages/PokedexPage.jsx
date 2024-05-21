@@ -68,7 +68,7 @@ const callbackFilter = poke => {
     <div className="two_container">
       
       <HeaderPages />
-        <body className="two_body">
+        <section className="two_body">
           
         <p className="two_welcome"><span className="two_welcom_i">Welcome {trainer}</span>, <span className="two_welcom_p">here you will find your favorite pokemon</span></p>
         <div className="two_form_container">
@@ -99,7 +99,7 @@ const callbackFilter = poke => {
           }
         </div>
          
-      </body>
+      </section>
 
     </div>
   )
