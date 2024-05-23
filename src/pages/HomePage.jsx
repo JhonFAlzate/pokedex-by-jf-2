@@ -39,7 +39,7 @@ useEffect(() => {
 
   return (
     <div className="home_container">
-       {/* <button className='home_btn_dark' onClick={handledark} >dark-light mode</button> */}
+     
             <div className="home_toggle home_btn_dark">
                 <input onClick={handledark} type="checkbox" id='toggle' className='input offscreen' />
                 <label htmlFor="toggle" className='switch'></label>

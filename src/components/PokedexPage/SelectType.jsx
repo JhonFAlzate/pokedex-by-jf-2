@@ -23,7 +23,7 @@ const handleChange = e => {
 
   return (
     <select className="two_select" onChange={handleChange}> 
-        <option value="allPokemons">All pokemons</option>
+        <option value="allPokemons" className="recuadro">All pokemons</option>
        {
         types?.results.map(typeInfo => (
             <option className="two_option" key={typeInfo.url} value={typeInfo.url}>{typeInfo.name} </option>

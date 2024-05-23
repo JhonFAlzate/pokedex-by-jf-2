@@ -5,22 +5,12 @@ import PokeCard from "../components/PokedexPage/PokeCard"
 import SelectType from "../components/PokedexPage/SelectType"
 import '../components/styles/PokedexPage.css'
 import HeaderPages from "../components/HeaderPages"
-import { current } from "@reduxjs/toolkit"
 import Pagination from "../components/Pagination"
 
 
+
 const PokedexPage = () => {
-/*--------*/
-  // const [posts, setPosts] = useState([])
-  // const [loading, setLoading] = useState(false)
-  // const [currentPage, setCurrentPage] = useState(1)
-  // const [postsPerPage, setPostsPerPage] = useState(10)
 
-
-
-
-
-  /*----------*/ 
 
 const trainer = useSelector(state => state.trainer)
 const [searchedName, setSearchedName] = useState('')
@@ -32,7 +22,7 @@ const [pokemons, getPokemons, getTypePokemon] = UseFetch()
 useEffect(() => {
 if(typeSelect === 'allPokemons') {
 
-    const url = 'https://pokeapi.co/api/v2/pokemon?limit=20&offset=0'
+    const url = 'https://pokeapi.co/api/v2/pokemon?limit=1000&offset=0'
     getPokemons(url)
   } else {
     getTypePokemon(typeSelect)
@@ -54,14 +44,21 @@ const callbackFilter = poke => {
   return filterName
 }
 
-/*---------*/
-// const indexOflastPost = currentPage * postsPerPage
-// const indexOffirstPost = indexOflastPost-postsPerPage
-// const currentPosts = posts.slice(indexOffirstPost, indexOflastPost)
-// const paginate = (pagenumber) => setCurrentPage(pagenumber)
+const [currentPage, setCurrentPage] = useState(1)
+const [quantsPages, setQuantsPages] = useState(20)
 
 
-/*--------*/
+const limitPages = currentPage * quantsPages
+const startPages = limitPages - quantsPages
+
+
+
+const pages= pokemons?.results.slice(startPages, limitPages)
+
+const totalPages = (pokemons?.results.length) / quantsPages
+console.log(totalPages)
+
+
 
   return (
     
@@ -84,12 +81,21 @@ const callbackFilter = poke => {
               </form>
         </div>
 
+        <div className="pagination_container">
+          <Pagination 
+          currentPage = {currentPage}
+          setCurrentPage = {setCurrentPage}
+          totalPages = {totalPages}
+          />
+
+        </div>
+
         <div className="two_container_card">
             {
               pokemons && pokemons.results.filter(callbackFilter).length === 0
               ? <h2 className="two_title_error">There are no pokemon that meet the filters </h2>
               :
-              ( pokemons?.results.filter(callbackFilter).map(poke =>(
+              ( pages?.filter(callbackFilter).map(poke =>(
                 <PokeCard 
                 key={poke.url}
                 poke = {poke}

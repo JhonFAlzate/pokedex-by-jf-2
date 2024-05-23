@@ -59,13 +59,7 @@
     display: flex;
    justify-content: center;
    align-items: center;
-   /* &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 8px 10px #eedf07;
-    background-color: #FE1936;
-    color: rgb(241, 238, 238);
-    filter:brightness(1.2); 
-} */
+
        
 }
 

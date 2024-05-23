@@ -1,28 +1,27 @@
 
 
-const Pagination = ({postPorPage, totalPosts, paginate}) => {
+const Pagination = ({currentPage, setCurrentPage, totalPages}) => {
 
-const pageNumbers = [];
+  const handleBefore =  () => {
+    if(currentPage !== 1){
+      setCurrentPage(currentPage-1)
+    }
 
-for (let i = 0; i<= Math.ceil(totalPosts/postPorPage); i++) {
-    pageNumbers.push(i)
-}
-
+  }
+  const handleAfter =  () => {
+    if (currentPage !== totalPages){
+      setCurrentPage(currentPage +1 )
+    }
+    
+  }
 
   return (
-   <nav>
-        <ul>
-            {   pageNumbers.map(number => (
-               <li key={number}>
-                    <a onClick={() => paginate(number)} href="!#">
-                     {number}
-                    </a>
-                </li>
-            ))
-            }
-        </ul>
-   </nav>
-
+    <div className="pagination_padre">
+      <button className="pagination_btn" onClick={handleBefore}>⬅ Before</button>
+      <h3 className="pagination_title">{currentPage} --- {totalPages}</h3>
+      <button className="pagination_btn" onClick={handleAfter}>After ➡ </button>
+    </div>
   )
 }
+
 export default Pagination
